@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Y4-Ec-TVn">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--评论输入框-->
+        <scene sceneID="1Ib-x3-jdN">
+            <objects>
+                <viewController id="lNO-IN-6Bj" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pvd-u2-YbM"/>
+                        <viewControllerLayoutGuide type="bottom" id="2h3-sz-EDE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LLm-S0-Ywf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUp-sT-qAL">
+                                <rect key="frame" x="157" y="126" width="286" height="49"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="286" id="Xwx-dN-k9P"/>
+                                    <constraint firstAttribute="height" constant="49" id="ZON-yE-e26"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jUp-sT-qAL" firstAttribute="centerX" secondItem="LLm-S0-Ywf" secondAttribute="centerX" id="0hI-km-GJX"/>
+                            <constraint firstItem="jUp-sT-qAL" firstAttribute="centerY" secondItem="LLm-S0-Ywf" secondAttribute="centerY" constant="-149.5" id="c5A-T0-id9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="评论输入框" id="EBK-p1-XiT">
+                        <barButtonItem key="leftBarButtonItem" title="清空" id="HBg-ia-GOl">
+                            <connections>
+                                <action selector="cleanContent:" destination="lNO-IN-6Bj" id="xlR-ev-rh4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="发表" id="PDV-gF-iPL">
+                            <connections>
+                                <action selector="barItemDidTouch:" destination="lNO-IN-6Bj" id="Fc8-2U-5sV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resultLabel" destination="jUp-sT-qAL" id="0Do-zt-xcX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXB-0y-fqm" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344" y="349"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xna-4z-umv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Y4-Ec-TVn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YY5-BE-3rg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lNO-IN-6Bj" kind="relationship" relationship="rootViewController" id="bhF-9U-TGw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nj0-nr-5qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="532" y="349"/>
+        </scene>
+    </scenes>
+</document>
