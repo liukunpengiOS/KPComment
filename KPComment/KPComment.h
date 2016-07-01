@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MaskView.h"
+#import "KPMaskView.h"
 
 #define KPCOMMENT [KPComment commnet]
 typedef void(^contentBlock)(NSString *content);
-@interface KPComment : MaskView
+@interface KPComment : KPMaskView
 
 + (instancetype)commnet;
 @property (nonatomic,copy) contentBlock contentBlock;

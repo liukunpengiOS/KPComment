@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A244FFD1D26066700BF28A7 /* KPMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A244FFC1D26066700BF28A7 /* KPMaskView.m */; };
 		2AEBC35E1D1C1C5B00BBB543 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC35D1D1C1C5B00BBB543 /* main.m */; };
 		2AEBC3611D1C1C5B00BBB543 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3601D1C1C5B00BBB543 /* AppDelegate.m */; };
 		2AEBC3641D1C1C5B00BBB543 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3631D1C1C5B00BBB543 /* ViewController.m */; };
@@ -18,7 +19,6 @@
 		2AEBC3981D1C1C7000BBB543 /* BgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3911D1C1C7000BBB543 /* BgView.m */; };
 		2AEBC3991D1C1C7000BBB543 /* InputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3931D1C1C7000BBB543 /* InputView.m */; };
 		2AEBC39A1D1C1C7000BBB543 /* KPComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3951D1C1C7000BBB543 /* KPComment.m */; };
-		2AEBC39B1D1C1C7000BBB543 /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3971D1C1C7000BBB543 /* MaskView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A244FFB1D26066700BF28A7 /* KPMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPMaskView.h; sourceTree = "<group>"; };
+		2A244FFC1D26066700BF28A7 /* KPMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPMaskView.m; sourceTree = "<group>"; };
 		2AEBC3591D1C1C5B00BBB543 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEBC35D1D1C1C5B00BBB543 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2AEBC35F1D1C1C5B00BBB543 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,8 +63,6 @@
 		2AEBC3931D1C1C7000BBB543 /* InputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputView.m; sourceTree = "<group>"; };
 		2AEBC3941D1C1C7000BBB543 /* KPComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPComment.h; sourceTree = "<group>"; };
 		2AEBC3951D1C1C7000BBB543 /* KPComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPComment.m; sourceTree = "<group>"; };
-		2AEBC3961D1C1C7000BBB543 /* MaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskView.h; sourceTree = "<group>"; };
-		2AEBC3971D1C1C7000BBB543 /* MaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A244FFA1D26066700BF28A7 /* KPMaskView */ = {
+			isa = PBXGroup;
+			children = (
+				2A244FFB1D26066700BF28A7 /* KPMaskView.h */,
+				2A244FFC1D26066700BF28A7 /* KPMaskView.m */,
+			);
+			path = KPMaskView;
+			sourceTree = SOURCE_ROOT;
+		};
 		2AEBC3501D1C1C5B00BBB543 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +123,7 @@
 		2AEBC35B1D1C1C5B00BBB543 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				2A244FFA1D26066700BF28A7 /* KPMaskView */,
 				2AEBC35F1D1C1C5B00BBB543 /* AppDelegate.h */,
 				2AEBC3601D1C1C5B00BBB543 /* AppDelegate.m */,
 				2AEBC3621D1C1C5B00BBB543 /* ViewController.h */,
@@ -162,8 +172,6 @@
 				2AEBC3931D1C1C7000BBB543 /* InputView.m */,
 				2AEBC3941D1C1C7000BBB543 /* KPComment.h */,
 				2AEBC3951D1C1C7000BBB543 /* KPComment.m */,
-				2AEBC3961D1C1C7000BBB543 /* MaskView.h */,
-				2AEBC3971D1C1C7000BBB543 /* MaskView.m */,
 			);
 			name = KPComment;
 			path = ../KPComment;
@@ -302,10 +310,10 @@
 				2AEBC3641D1C1C5B00BBB543 /* ViewController.m in Sources */,
 				2AEBC3611D1C1C5B00BBB543 /* AppDelegate.m in Sources */,
 				2AEBC39A1D1C1C7000BBB543 /* KPComment.m in Sources */,
+				2A244FFD1D26066700BF28A7 /* KPMaskView.m in Sources */,
 				2AEBC3991D1C1C7000BBB543 /* InputView.m in Sources */,
 				2AEBC35E1D1C1C5B00BBB543 /* main.m in Sources */,
 				2AEBC3981D1C1C7000BBB543 /* BgView.m in Sources */,
-				2AEBC39B1D1C1C7000BBB543 /* MaskView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +537,7 @@
 				2AEBC3881D1C1C5B00BBB543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AEBC3891D1C1C5B00BBB543 /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +546,7 @@
 				2AEBC38B1D1C1C5B00BBB543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AEBC38C1D1C1C5B00BBB543 /* Build configuration list for PBXNativeTarget "DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +555,7 @@
 				2AEBC38E1D1C1C5B00BBB543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
