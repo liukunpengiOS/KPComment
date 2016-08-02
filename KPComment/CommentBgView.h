@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InputView.h"
+#import "CommnetView.h"
 
-@interface BgView : UIView
+@interface CommentBgView : UIView
 
 /**
  *  变成第一相应

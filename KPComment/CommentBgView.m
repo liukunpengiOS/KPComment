@@ -6,18 +6,18 @@
 //  Copyright © 2015年 liukunpeng. All rights reserved.
 //
 
-#import "BgView.h"
-#import "InputView.h"
+#import "CommentBgView.h"
+#import "CommnetView.h"
 
 #define WIDTH self.frame.size.width
 #define HEIGHT self.frame.size.height
 #define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
-@interface BgView ()<UITextViewDelegate>
+@interface CommentBgView ()<UITextViewDelegate>
 
-@property (nonatomic,strong) InputView *inputView;
+@property (nonatomic,strong) CommnetView *inputView;
 @end
 
-@implementation BgView
+@implementation CommentBgView
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -43,9 +43,9 @@
 //初始化设置
 - (void)setup {
 
-    _inputView = [[InputView alloc]initWithFrame:CGRectMake((WIDTH - WIDTH * 0.98)/2,
-                                                            (HEIGHT - HEIGHT * 0.8)/2,
-                                                            WIDTH * 0.98, HEIGHT * 0.8)];
+    _inputView = [[CommnetView alloc]initWithFrame:CGRectMake((WIDTH - WIDTH * 0.98)/2,
+                                                              (HEIGHT - HEIGHT * 0.8)/2,
+                                                              WIDTH * 0.98, HEIGHT * 0.8)];
     _inputView.delegate = self;
     [self addSubview:_inputView];
 }
@@ -97,11 +97,13 @@ shouldChangeTextInRange:(NSRange)range replacementText:(NSString*)text {
         NSInteger textLength = [[textView.text stringByTrimmingCharactersInSet:
                                  [NSCharacterSet whitespaceAndNewlineCharacterSet]]length];
         if (textLength != 0) {
+            
             [textView resignFirstResponder];
             if (self.clickReturn) {
                 self.clickReturn(textView.text);
             }
         }else {
+            
             return NO;
         }
     }

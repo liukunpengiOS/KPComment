@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InputView : UITextView
+@interface CommnetView : UITextView
 
+@property (nonatomic,strong) NSString *placeholderText;
 @end

@@ -16,8 +16,8 @@
 		2AEBC36C1D1C1C5B00BBB543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AEBC36A1D1C1C5B00BBB543 /* LaunchScreen.storyboard */; };
 		2AEBC3771D1C1C5B00BBB543 /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3761D1C1C5B00BBB543 /* DemoTests.m */; };
 		2AEBC3821D1C1C5B00BBB543 /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3811D1C1C5B00BBB543 /* DemoUITests.m */; };
-		2AEBC3981D1C1C7000BBB543 /* BgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3911D1C1C7000BBB543 /* BgView.m */; };
-		2AEBC3991D1C1C7000BBB543 /* InputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3931D1C1C7000BBB543 /* InputView.m */; };
+		2AEBC3981D1C1C7000BBB543 /* CommentBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3911D1C1C7000BBB543 /* CommentBgView.m */; };
+		2AEBC3991D1C1C7000BBB543 /* CommnetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3931D1C1C7000BBB543 /* CommnetView.m */; };
 		2AEBC39A1D1C1C7000BBB543 /* KPComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AEBC3951D1C1C7000BBB543 /* KPComment.m */; };
 /* End PBXBuildFile section */
 
@@ -57,10 +57,10 @@
 		2AEBC37D1D1C1C5B00BBB543 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEBC3811D1C1C5B00BBB543 /* DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUITests.m; sourceTree = "<group>"; };
 		2AEBC3831D1C1C5B00BBB543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2AEBC3901D1C1C7000BBB543 /* BgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BgView.h; sourceTree = "<group>"; };
-		2AEBC3911D1C1C7000BBB543 /* BgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BgView.m; sourceTree = "<group>"; };
-		2AEBC3921D1C1C7000BBB543 /* InputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputView.h; sourceTree = "<group>"; };
-		2AEBC3931D1C1C7000BBB543 /* InputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputView.m; sourceTree = "<group>"; };
+		2AEBC3901D1C1C7000BBB543 /* CommentBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentBgView.h; sourceTree = "<group>"; };
+		2AEBC3911D1C1C7000BBB543 /* CommentBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentBgView.m; sourceTree = "<group>"; };
+		2AEBC3921D1C1C7000BBB543 /* CommnetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommnetView.h; sourceTree = "<group>"; };
+		2AEBC3931D1C1C7000BBB543 /* CommnetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommnetView.m; sourceTree = "<group>"; };
 		2AEBC3941D1C1C7000BBB543 /* KPComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPComment.h; sourceTree = "<group>"; };
 		2AEBC3951D1C1C7000BBB543 /* KPComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPComment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,12 +166,12 @@
 		2AEBC38F1D1C1C7000BBB543 /* KPComment */ = {
 			isa = PBXGroup;
 			children = (
-				2AEBC3901D1C1C7000BBB543 /* BgView.h */,
-				2AEBC3911D1C1C7000BBB543 /* BgView.m */,
-				2AEBC3921D1C1C7000BBB543 /* InputView.h */,
-				2AEBC3931D1C1C7000BBB543 /* InputView.m */,
 				2AEBC3941D1C1C7000BBB543 /* KPComment.h */,
 				2AEBC3951D1C1C7000BBB543 /* KPComment.m */,
+				2AEBC3921D1C1C7000BBB543 /* CommnetView.h */,
+				2AEBC3931D1C1C7000BBB543 /* CommnetView.m */,
+				2AEBC3901D1C1C7000BBB543 /* CommentBgView.h */,
+				2AEBC3911D1C1C7000BBB543 /* CommentBgView.m */,
 			);
 			name = KPComment;
 			path = ../KPComment;
@@ -244,6 +244,7 @@
 				TargetAttributes = {
 					2AEBC3581D1C1C5B00BBB543 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6673W89644;
 					};
 					2AEBC3711D1C1C5B00BBB543 = {
 						CreatedOnToolsVersion = 7.3;
@@ -311,9 +312,9 @@
 				2AEBC3611D1C1C5B00BBB543 /* AppDelegate.m in Sources */,
 				2AEBC39A1D1C1C7000BBB543 /* KPComment.m in Sources */,
 				2A244FFD1D26066700BF28A7 /* KPMaskView.m in Sources */,
-				2AEBC3991D1C1C7000BBB543 /* InputView.m in Sources */,
+				2AEBC3991D1C1C7000BBB543 /* CommnetView.m in Sources */,
 				2AEBC35E1D1C1C5B00BBB543 /* main.m in Sources */,
-				2AEBC3981D1C1C7000BBB543 /* BgView.m in Sources */,
+				2AEBC3981D1C1C7000BBB543 /* CommentBgView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,10 +455,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.drex.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chuangzhiyi.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -465,10 +468,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.drex.Demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chuangzhiyi.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -7,16 +7,14 @@
 //
 
 #import "KPComment.h"
-#import "BgView.h"
+#import "CommentBgView.h"
 
 #define INPUT_VIEW_HEIGHT 40
 #define WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define HEIGHT ([UIScreen mainScreen].bounds.size.height)
 @interface KPComment ()
 
-@property (nonatomic,assign) CGFloat keyboardHeight;
-@property (nonatomic,assign) CGFloat inputViewOriginY;
-@property (nonatomic,strong) BgView *bgView;
+@property (nonatomic,strong) CommentBgView *inputBgView;
 @end
 
 @implementation KPComment
@@ -33,18 +31,22 @@
 
 - (void)initMaskView {
     [super initMaskView];
-    [self initComment];
+    
+    [self configComment];
 }
 
 - (void)showMaskView {
     [super showMaskView];
-    [self.window insertSubview:_bgView aboveSubview:self.maskView];
-    [_bgView becomeResponder];
+    
+    [_inputBgView becomeResponder];
+    [self.window insertSubview:_inputBgView
+                  aboveSubview:self.maskView];
 }
 
 - (void)hiddenMaskView {
     [super hiddenMaskView];
-    [_bgView resignResponder];
+    
+    [_inputBgView resignResponder];
     [self clean];
 }
 
@@ -56,25 +58,28 @@
 }
 
 #pragma mark - 初始化
-- (void)initComment {
+- (void)configComment {
     
-    _bgView = [[BgView alloc]initWithFrame:CGRectMake(0, HEIGHT, WIDTH,INPUT_VIEW_HEIGHT)];
-    [_bgView regiserKeyBoardNotify];
-    [self.window insertSubview:_bgView aboveSubview:self.maskView];
+    _inputBgView = [[CommentBgView alloc]initWithFrame:CGRectMake(0, HEIGHT, WIDTH, INPUT_VIEW_HEIGHT)];
+    [_inputBgView regiserKeyBoardNotify];
     
     __weak typeof(self)wself = self;
-    _bgView.keyboardWillShow = ^(NSDictionary *userInfo) {
+    _inputBgView.keyboardWillShow = ^(NSDictionary *userInfo) {
+        
         wself.window.hidden = NO;
-        CGFloat keyboardHeight = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
-        wself.inputViewOriginY = HEIGHT - keyboardHeight;
-        wself.bgView.frame = CGRectMake(0, wself.inputViewOriginY - INPUT_VIEW_HEIGHT,WIDTH, INPUT_VIEW_HEIGHT);
+        CGFloat keyboardHeight = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey]
+                                  CGRectValue].size.height;
+        CGFloat inputViewOriginY = HEIGHT - keyboardHeight;
+        wself.inputBgView.frame = CGRectMake(0, inputViewOriginY - INPUT_VIEW_HEIGHT,
+                                        WIDTH, INPUT_VIEW_HEIGHT);
     };
     
-    _bgView.keyboardWillHidden = ^(NSDictionary *userInfo) {
-        wself.bgView.frame = CGRectMake(0, HEIGHT, WIDTH, INPUT_VIEW_HEIGHT);
+    _inputBgView.keyboardWillHidden = ^(NSDictionary *userInfo) {
+        
+        wself.inputBgView.frame = CGRectMake(0, HEIGHT, WIDTH, INPUT_VIEW_HEIGHT);
     };
     
-    _bgView.clickReturn = ^(NSString *content) {
+    _inputBgView.clickReturn = ^(NSString *content) {
         [wself hiddenMaskView];
         if (wself.contentBlock) {
             wself.contentBlock(content);
@@ -82,12 +87,11 @@
     };
 }
 
-//清理
 - (void)clean {
     
-    [_bgView unRegiserKeyBoardNotify];
-    [_bgView removeFromSuperview];
-    _bgView = nil;
+    [_inputBgView unRegiserKeyBoardNotify];
+    [_inputBgView removeFromSuperview];
+    _inputBgView = nil;
 }
 
 @end

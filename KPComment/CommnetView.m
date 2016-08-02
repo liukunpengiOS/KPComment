@@ -6,51 +6,55 @@
 //  Copyright (c) 2015年 hnchuangzhiyi. All rights reserved.
 //
 
-#import "InputView.h"
+#import "CommnetView.h"
 
 #define RGB(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
-@interface InputView ()
+@interface CommnetView ()
 
 @property (nonatomic,strong) UILabel *placeholder;
 @end
 
-@implementation InputView
+@implementation CommnetView
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
     
         [self setup];
+        [self configElements];
     }
     return self;
 }
 
+#pragma mark - 初始化区
 - (void)setup {
     
-     _placeholder = [[UILabel alloc]init];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(textDidChange:)
-                                                 name:UITextViewTextDidChangeNotification
-                                               object:nil];
-
-    self.font = [UIFont systemFontOfSize:15];
     self.returnKeyType = UIReturnKeySend;
-    [self setPlaceHolder];
+    self.font = [UIFont systemFontOfSize:15];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textDidChange:)
+                                                 name:UITextViewTextDidChangeNotification object:nil];
 }
 
-- (void)setPlaceHolder {
+#pragma mark - 配置区
+- (void)configElements {
+    [self configPlaceholder];
+}
+
+- (void)configPlaceholder {
     
-    _placeholder.text = @"我要吐槽...";
+    _placeholder = [[UILabel alloc]initWithFrame:self.bounds];
+    _placeholder.text = _placeholderText ?: @"  我说两句";
     _placeholder.textColor = RGB(168, 168, 168);
     _placeholder.font = [UIFont systemFontOfSize:15];
     [self addSubview:_placeholder];
-    CGSize size = [self boundingRectWithSize:CGSizeMake(0, 0) text:_placeholder.text];
-    _placeholder.frame = CGRectMake(5,(CGRectGetHeight(self.frame) - size.height)/2,
-                                    size.width, size.height);
 }
 
+#pragma mark - 赋值区
+- (void)setPlaceholderText:(NSString *)placeholderText {
+    _placeholderText = placeholderText;
+}
+
+#pragma mark - 事件响应区
 - (void)textDidChange:(NSNotification*)notification {
-    
     _placeholder.hidden = self.text.length > 0 ? YES : NO;
 }
 
